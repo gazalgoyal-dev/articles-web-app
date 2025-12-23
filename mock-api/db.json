@@ -23,7 +23,22 @@
       "source": "Healthline",
       "title": "10 habits that improve mental health",
       "image": "/images/health.png",
-      "readTime": "5 min read"
+      "readTime": "5 min read",
+      "content": [
+        "Mental health is just as important as physical health.",
+        "Small daily habits can have a huge impact on your wellbeing.",
+        "Here are 10 habits that can significantly improve mental health:",
+        "1. Exercise regularly",
+        "2. Maintain a consistent sleep schedule",
+        "3. Practice mindfulness or meditation",
+        "4. Eat nutritious food",
+        "5. Stay socially connected",
+        "6. Limit social media consumption",
+        "7. Spend time in nature",
+        "8. Set realistic goals",
+        "9. Talk openly about your feelings",
+        "10. Seek professional help when needed"
+      ]
     },
     {
       "id": 4,

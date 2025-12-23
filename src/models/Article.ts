@@ -1,9 +1,9 @@
 export interface Article {
-  id: number
-  category: string
-  source: string
-  title: string
-  image: string
-  readTime: string
-  content: string
+  id: number;
+  category: string;
+  source: string;
+  title: string;
+  image: string;
+  readTime: string;
+  content: string[];
 }

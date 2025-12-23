@@ -11,3 +11,13 @@ export const fetchArticles = async (): Promise<Article[]> => {
 
   return response.json()
 }
+
+export const fetchArticleById = async (id: number): Promise<Article> => {
+  const response = await fetch(`${API_URL}/${id}`)
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch article")
+  }
+
+  return response.json()
+}
