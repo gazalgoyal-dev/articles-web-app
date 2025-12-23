@@ -67,10 +67,7 @@ npm install
 
 Start the mock API server
 
-npx json-server --watch mock-api/db.json --port 4000
-
-This starts the API at:
-http://localhost:4000/articles
+npm run mock-api
 
 Keep this terminal running.
 
