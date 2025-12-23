@@ -2,14 +2,41 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f6f8; /* softer background */
+
+  background-image:
+    linear-gradient(
+      rgba(38, 96, 155, 0.96),
+      rgba(45, 77, 101, 0.96)
+    ),
+    url("../assets/bg-news.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+
   color: #1f2933;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 48px 16px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.page-header h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1f0e14;
 }
 
 .grid {
@@ -21,15 +48,15 @@ body {
 .card.horizontal {
   display: flex;
   background: #ffffff;
-  border-radius: 12px;              /* softer corners */
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card.horizontal:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card-image-wrapper {
@@ -57,7 +84,7 @@ body {
   font-size: 12px;
   color: #6b7280;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .title {
@@ -67,52 +94,65 @@ body {
   color: #2563eb;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover .title {
+  text-decoration: underline;
+}
+
 .read-time {
   font-size: 12px;
   color: #6b7280;
   margin-top: auto;
 }
 
-.card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
 .search-input {
   width: 100%;
   padding: 12px 16px;
   font-size: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #d1d5db;
   margin-bottom: 16px;
   outline: none;
+  background: #ffffff;
 }
 
 .search-input:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 .filters {
   display: flex;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   flex-wrap: wrap;
 }
 
 .filters button {
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
   border: none;
   background-color: #e5e7eb;
   color: #111827;
   cursor: pointer;
   font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.filters button:hover {
+.filters button:hover,
+.filters button.active {
   background-color: #2563eb;
   color: #ffffff;
+}
+
+.empty-state {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #6b7280;
 }
 
 @media (max-width: 768px) {
@@ -123,5 +163,9 @@ body {
   .card-image-wrapper {
     width: 100%;
     height: 200px;
+  }
+
+  body {
+    background-attachment: scroll;
   }
 }

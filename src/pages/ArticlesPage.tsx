@@ -33,17 +33,22 @@ const ArticlesPage = () => {
 
   return (
     <div className="container">
-      <h1>Most read</h1>
-      <h2>Our reader&apos;s highlights</h2>
+      <div className="page-header">
+        <h1>Most read</h1>
+        <h2>Our reader&apos;s highlights</h2>
+      </div>
 
       <SearchBar
         onSearch={(value) => {
           setSearchText(value)
-          setCategory("all") // reset filter when searching
+          setCategory("all")
         }}
       />
 
-      <Filters onSelectCategory={setCategory} />
+      <Filters
+        selectedCategory={category}
+        onSelectCategory={setCategory}
+      />
 
       <div className="grid">
         {filteredArticles.length > 0 ? (
@@ -51,7 +56,9 @@ const ArticlesPage = () => {
             <ArticleCard key={article.id} article={article} />
           ))
         ) : (
-          <p>No articles found.</p>
+          <p className="empty-state">
+            No articles match your search or selected category.
+          </p>
         )}
       </div>
     </div>

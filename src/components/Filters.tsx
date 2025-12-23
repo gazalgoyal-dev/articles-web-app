@@ -1,18 +1,20 @@
-type FiltersProps = {
+type Props = {
+  selectedCategory: string
   onSelectCategory: (category: string) => void
 }
 
 const categories = ["all", "Economy", "Crypto", "Health", "Lifestyle"]
 
-const Filters = ({ onSelectCategory }: FiltersProps) => {
+const Filters = ({ selectedCategory, onSelectCategory }: Props) => {
   return (
     <div className="filters">
-      {categories.map((cat) => (
+      {categories.map((category) => (
         <button
-          key={cat}
-          onClick={() => onSelectCategory(cat)}
+          key={category}
+          className={selectedCategory === category ? "active" : ""}
+          onClick={() => onSelectCategory(category)}
         >
-          {cat}
+          {category}
         </button>
       ))}
     </div>
