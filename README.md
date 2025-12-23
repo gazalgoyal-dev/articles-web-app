@@ -68,8 +68,10 @@ npm install
 Start the mock API server
 
 npm run mock-api
+
 This will start the API at:
 http://localhost:4000/articles
+
 Keep this terminal running.
 
 --------------------------------------------------
