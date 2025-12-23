@@ -11,7 +11,7 @@ describe("Filters", () => {
       />
     )
 
-    expect(screen.getByText("all")).toBeInTheDocument()
+    expect(screen.getByText("All")).toBeInTheDocument()
     expect(screen.getByText("Economy")).toBeInTheDocument()
     expect(screen.getByText("Crypto")).toBeInTheDocument()
     expect(screen.getByText("Health")).toBeInTheDocument()
