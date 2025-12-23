@@ -6,7 +6,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   return (
     <input
       type="text"
-      placeholder="Search articles..."
+      placeholder="Search by title, category, or source..."
       onChange={(e) => onSearch(e.target.value)}
       style={{
         padding: "8px",

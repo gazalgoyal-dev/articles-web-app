@@ -1,44 +1,31 @@
 {
   "articles": [
-    {
-      "id": 1,
-      "category": "Economy",
-      "source": "Politico",
-      "title": "The surprising reason Europe came together against Putin",
-      "image": "/images/politics.png",
-      "readTime": "12 min read",
-      "content": "Europe's response to Putin was driven by economic unity, shared security concerns, and political pressure..."
-    },
+{
+  "id": 1,
+  "category": "Economy",
+  "source": "BBC News",
+  "title": "Europe’s united response to Russia’s war in Ukraine",
+  "image": "/images/politics.png",
+  "readTime": "12 min read",
+  "url": "https://www.bbc.com/news/world-europe-60506682"
+},
     {
       "id": 2,
       "category": "Crypto",
       "source": "Platformer",
       "title": "Instagram's co-founders are mounting a comeback",
       "image": "/images/tech.png",
-      "readTime": "7 min read"
+      "readTime": "7 min read",
+      "url": "https://en.wikipedia.org/wiki/Kevin_Systrom"
     },
     {
       "id": 3,
       "category": "Health",
       "source": "Healthline",
-      "title": "10 habits that improve mental health",
+      "title": "10 habits that improve digestive health",
       "image": "/images/health.png",
       "readTime": "5 min read",
-      "content": [
-        "Mental health is just as important as physical health.",
-        "Small daily habits can have a huge impact on your wellbeing.",
-        "Here are 10 habits that can significantly improve mental health:",
-        "1. Exercise regularly",
-        "2. Maintain a consistent sleep schedule",
-        "3. Practice mindfulness or meditation",
-        "4. Eat nutritious food",
-        "5. Stay socially connected",
-        "6. Limit social media consumption",
-        "7. Spend time in nature",
-        "8. Set realistic goals",
-        "9. Talk openly about your feelings",
-        "10. Seek professional help when needed"
-      ]
+      "url": "https://www.healthline.com/digestive-health"
     },
     {
       "id": 4,
@@ -46,7 +33,8 @@
       "source": "Lifestyle Weekly",
       "title": "Minimalist living: why less is more",
       "image": "/images/lifestyle.png",
-      "readTime": "6 min read"
+      "readTime": "6 min read",
+      "url": "https://www.theminimalists.com/minimalism/"
     }
   ]
 }

@@ -1,28 +1,18 @@
-import { useState } from "react"
-
-type Props = {
+type FiltersProps = {
   onSelectCategory: (category: string) => void
 }
 
-const categories = ["All", "Economy", "Crypto", "Health", "Lifestyle"]
+const categories = ["all", "Economy", "Crypto", "Health", "Lifestyle"]
 
-const Filters = ({ onSelectCategory }: Props) => {
-  const [active, setActive] = useState("All")
-
-  const handleClick = (category: string) => {
-    setActive(category)
-    onSelectCategory(category.toLowerCase()) 
-  }
-
+const Filters = ({ onSelectCategory }: FiltersProps) => {
   return (
     <div className="filters">
-      {categories.map((category) => (
+      {categories.map((cat) => (
         <button
-          key={category}
-          className={active === category ? "active" : ""}
-          onClick={() => handleClick(category)}
+          key={cat}
+          onClick={() => onSelectCategory(cat)}
         >
-          {category}
+          {cat}
         </button>
       ))}
     </div>

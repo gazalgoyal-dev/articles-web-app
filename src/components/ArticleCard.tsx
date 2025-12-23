@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
 import type { Article } from "../models/Article"
 import placeholder from "../assets/placeholder.jpg"
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (
-    <Link to={`/articles/${article.id}`} className="card-link">
+    <a
+      href={article.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card-link"
+    >
       <article className="card horizontal">
         <div className="card-image-wrapper">
           <img
@@ -22,7 +26,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
           <span className="read-time">{article.readTime}</span>
         </div>
       </article>
-    </Link>
+    </a>
   )
 }
 

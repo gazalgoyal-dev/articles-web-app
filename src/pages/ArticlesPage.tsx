@@ -17,9 +17,12 @@ const ArticlesPage = () => {
   }, [])
 
   const filteredArticles = articles.filter((article) => {
-    const matchesSearch = article.title
-      .toLowerCase()
-      .includes(searchText.toLowerCase())
+    const search = searchText.toLowerCase()
+
+    const matchesSearch =
+      article.title.toLowerCase().includes(search) ||
+      article.category.toLowerCase().includes(search) ||
+      article.source.toLowerCase().includes(search)
 
     const matchesCategory =
       category === "all" ||
@@ -29,17 +32,27 @@ const ArticlesPage = () => {
   })
 
   return (
-    <div>
+    <div className="container">
       <h1>Most read</h1>
-      <h2>Our reader's highlights</h2>
+      <h2>Our reader&apos;s highlights</h2>
 
-      <SearchBar onSearch={setSearchText} />
+      <SearchBar
+        onSearch={(value) => {
+          setSearchText(value)
+          setCategory("all") // reset filter when searching
+        }}
+      />
+
       <Filters onSelectCategory={setCategory} />
 
       <div className="grid">
-        {filteredArticles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
+        {filteredArticles.length > 0 ? (
+          filteredArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))
+        ) : (
+          <p>No articles found.</p>
+        )}
       </div>
     </div>
   )
