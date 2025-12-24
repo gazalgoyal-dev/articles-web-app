@@ -1,20 +1,46 @@
+import { useState } from "react"
+
 type SearchBarProps = {
   onSearch: (value: string) => void
 }
 
 const SearchBar = ({ onSearch }: SearchBarProps) => {
+  const [value, setValue] = useState("")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const text = e.target.value
+    setValue(text)
+    onSearch(text)
+  }
+
+  const clearSearch = () => {
+    setValue("")
+    onSearch("")
+  }
+
   return (
-    <input
-      type="text"
-      placeholder="Search by title, category, or source..."
-      onChange={(e) => onSearch(e.target.value)}
-      style={{
-        padding: "8px",
-        width: "100%",
-        marginBottom: "16px",
-        fontSize: "14px",
-      }}
-    />
+    <div className="search-wrapper">
+      <span className="search-icon">🔍</span>
+
+      <input
+        type="text"
+        className="search-input with-icons"
+        placeholder="Search by title, category, or source..."
+        value={value}
+        onChange={handleChange}
+      />
+
+      {value && (
+        <button
+          type="button"
+          className="clear-icon"
+          onClick={clearSearch}
+          aria-label="Clear search"
+        >
+          ✕
+        </button>
+      )}
+    </div>
   )
 }
 
