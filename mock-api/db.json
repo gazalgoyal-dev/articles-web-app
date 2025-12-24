@@ -11,6 +11,15 @@
 },
     {
       "id": 2,
+      "category": "Economy",
+      "source": "Reuters",
+      "title": "Global economy faces uncertainty as central banks signal policy shifts",
+  "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
+  "readTime": "9 min read",
+  "url": "https://www.reuters.com"
+},
+    {
+      "id": 3,
       "category": "Crypto",
       "source": "Platformer",
       "title": "Instagram's co-founders are mounting a comeback",
@@ -19,7 +28,7 @@
       "url": "https://en.wikipedia.org/wiki/Kevin_Systrom"
     },
     {
-      "id": 3,
+      "id": 4,
       "category": "Health",
       "source": "Healthline",
       "title": "10 habits that improve digestive health",
@@ -28,7 +37,7 @@
       "url": "https://www.healthline.com/digestive-health"
     },
     {
-      "id": 4,
+      "id": 5,
       "category": "Lifestyle",
       "source": "Lifestyle Weekly",
       "title": "Minimalist living: why less is more",

@@ -32,36 +32,46 @@ const ArticlesPage = () => {
   })
 
   return (
-    <div className="container">
-      <div className="page-header">
-        <h1>Most read</h1>
-        <h2>Our reader&apos;s highlights</h2>
-      </div>
+    <>
+      <header className="hero">
+        <div className="hero-inner">
+          <h1>Most read</h1>
+          <h2>Our reader&apos;s highlights</h2>
 
-      <SearchBar
-        onSearch={(value) => {
-          setSearchText(value)
-          setCategory("all")
-        }}
-      />
+          <SearchBar
+            onSearch={(value) => {
+              setSearchText(value)
+              setCategory("all")
+            }}
+          />
 
-      <Filters
-        selectedCategory={category}
-        onSelectCategory={setCategory}
-      />
+          <Filters
+            selectedCategory={category}
+            onSelectCategory={setCategory}
+          />
+        </div>
+      </header>
 
-      <div className="grid">
-        {filteredArticles.length > 0 ? (
-          filteredArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))
-        ) : (
-          <p className="empty-state">
-            No articles match your search or selected category.
-          </p>
-        )}
-      </div>
-    </div>
+      <main className="content">
+        <div className="container">
+          <div className="grid">
+            {filteredArticles.length > 0 ? (
+              filteredArticles.map((article) => (
+                <ArticleCard key={article.id} article={article} />
+              ))
+            ) : (
+              <p className="empty-state">
+                No articles match your search or selected category.
+              </p>
+            )}
+          </div>
+        </div>
+      </main>
+
+      <footer className="footer">
+        © 2025 Articles Web App · Built with React, Vite & TypeScript
+      </footer>
+    </>
   )
 }
 
