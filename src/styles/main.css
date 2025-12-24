@@ -1,4 +1,3 @@
-/* ===== Base Layout ===== */
 html, body {
   height: 100%;
 }
@@ -16,7 +15,6 @@ body {
   flex-direction: column;
 }
 
-/* ===== Hero Section (Top Header) ===== */
 .hero {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #ffffff;
@@ -41,7 +39,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* ===== Search ===== */
 .search-wrapper {
   position: relative;
   width: 100%;
@@ -90,7 +87,6 @@ body {
   color: #111827;
 }
 
-/* ===== Filters ===== */
 .filters {
   display: flex;
   gap: 12px;
@@ -117,7 +113,6 @@ body {
   color: #ffffff;
 }
 
-/* ===== Main Content ===== */
 .content {
   flex: 1;
   padding: 48px 16px;
@@ -128,14 +123,12 @@ body {
   margin: 0 auto;
 }
 
-/* ===== Grid (Column Layout) ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 
-/* ===== Article Card ===== */
 .card.horizontal {
   display: flex;
   background: #ffffff;
@@ -191,13 +184,11 @@ body {
   color: #6b7280;
 }
 
-/* ===== Empty State ===== */
 .empty-state {
   font-size: 14px;
   color: #374151;
 }
 
-/* ===== Footer ===== */
 .footer {
   background: linear-gradient(90deg, #020617, #0f172a);
   color: #cbd5f5;
@@ -206,7 +197,6 @@ body {
   font-size: 13px;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
