@@ -9,11 +9,13 @@ const ArticlesPage = () => {
   const [articles, setArticles] = useState<Article[]>([])
   const [searchText, setSearchText] = useState("")
   const [category, setCategory] = useState("all")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchArticles()
-      .then(setArticles)
+      .then((data) => setArticles(data))
       .catch(console.error)
+      .finally(() => setLoading(false))
   }, [])
 
   const filteredArticles = articles.filter((article) => {
@@ -33,7 +35,7 @@ const ArticlesPage = () => {
 
   return (
     <>
-      <header className="hero">
+      <section className="hero">
         <div className="hero-inner">
           <h1>Most read</h1>
           <h2>Our reader&apos;s highlights</h2>
@@ -50,21 +52,23 @@ const ArticlesPage = () => {
             onSelectCategory={setCategory}
           />
         </div>
-      </header>
+      </section>
 
       <main className="content">
         <div className="container">
-          <div className="grid">
-            {filteredArticles.length > 0 ? (
-              filteredArticles.map((article) => (
+          {loading ? (
+            <div className="loader">Loading articles…</div>
+          ) : filteredArticles.length > 0 ? (
+            <div className="grid">
+              {filteredArticles.map((article) => (
                 <ArticleCard key={article.id} article={article} />
-              ))
-            ) : (
-              <p className="empty-state">
-                No articles match your search or selected category.
-              </p>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="empty-state">
+              No articles match your search or selected category.
+            </p>
+          )}
         </div>
       </main>
 
